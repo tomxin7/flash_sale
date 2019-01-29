@@ -1,6 +1,7 @@
 package cn.tomxin.miaosha.controller;
 
 import cn.tomxin.miaosha.domain.User;
+import cn.tomxin.miaosha.redis.RedisService;
 import cn.tomxin.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ public class SampleController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    RedisService redisService;
 
     @RequestMapping("/thymeleaf")
     public String thymeleaf(Model model){
@@ -27,4 +30,7 @@ public class SampleController {
 
         return userService.getById(1);
     }
+
+
+
 }
